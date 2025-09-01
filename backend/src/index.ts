@@ -2,9 +2,11 @@ import Fastify from "fastify";
 import cors from "@fastify/cors";
 import dotenv from "dotenv";
 
+import passwordGeneratorRoutes from "../src/routes/passwordGenerator.js";
+
 dotenv.config();
 
-const server = Fastify({ logger: false });
+const server = Fastify({ logger: true });
 
 const PORT = Number(process.env.PORT);
 const HOST = process.env.HOST;
@@ -19,6 +21,8 @@ server.get("/", async () => {
     timestamp: Date.now(),
   };
 });
+
+await server.register(passwordGeneratorRoutes);
 
 await server.listen({ port: PORT, host: HOST });
 
