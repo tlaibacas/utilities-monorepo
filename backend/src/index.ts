@@ -6,7 +6,7 @@ import passwordGeneratorRoutes from "./routes/passwordGenerator.js";
 
 dotenv.config();
 
-const server = Fastify({ logger: true });
+const server = Fastify({ logger: false });
 
 const PORT = Number(process.env.PORT);
 const HOST = process.env.HOST;
