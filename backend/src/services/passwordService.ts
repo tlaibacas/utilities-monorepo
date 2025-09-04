@@ -4,7 +4,7 @@ import { PasswordOptions } from "../validator/passwordValidator.js";
 export function generateSecurePassword(options: PasswordOptions): string {
   const { length, numbers, symbols, uppercase, lowercase } = options;
 
-  let chars = "abcdefghijklmnopqrstuvwxyz";
+  let chars = "";
   if (uppercase) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   if (numbers) chars += "0123456789";
   if (symbols) chars += "!@#$%^&*()-_=+[]{}|;:,.<>?";
