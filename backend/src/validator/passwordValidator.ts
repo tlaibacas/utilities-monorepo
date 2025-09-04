@@ -32,5 +32,6 @@ export const passwordSchema = z.object({
     .optional()
     .default(false),
 });
+d;
 
 export type PasswordOptions = z.infer<typeof passwordSchema>;
