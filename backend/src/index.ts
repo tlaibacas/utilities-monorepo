@@ -22,7 +22,7 @@ server.get("/", async () => {
   };
 });
 
-await server.register(passwordGeneratorRoutes);
+await server.register(passwordGeneratorRoutes, { prefix: "/api" });
 
 await server.listen({ port: PORT, host: HOST });
 
