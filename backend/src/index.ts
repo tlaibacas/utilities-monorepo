@@ -2,7 +2,7 @@ import Fastify from "fastify";
 import cors from "@fastify/cors";
 import dotenv from "dotenv";
 
-import passwordGeneratorRoutes from "../src/routes/passwordGenerator.js";
+import passwordGeneratorRoutes from "./routes/passwordGenerator.js";
 
 dotenv.config();
 
