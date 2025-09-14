@@ -19,7 +19,7 @@ export async function setupJwt(server: FastifyInstance) {
   server.get("/token", async () => {
     const token = server.jwt.sign(
       { client: "front-end" },
-      { expiresIn: "10h" }
+      { expiresIn: "10s" }
     );
     return { token };
   });
