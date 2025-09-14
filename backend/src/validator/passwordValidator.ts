@@ -3,31 +3,31 @@ import { z } from "zod";
 export const passwordSchema = z.object({
   length: z
     .number({
-      error: "The 'length' field must be a number",
+      error: "validation.length.type",
     })
-    .min(4, { message: "Password must be at least 4 characters long" })
-    .max(64, { message: "Password must be at most 64 characters long" }),
+    .min(4, { message: "validation.length.min" })
+    .max(64, { message: "validation.length.max" }),
 
   numbers: z
-    .boolean({ error: "The 'numbers' field must be true or false" })
+    .boolean({ error: "validation.numbers.type" })
     .optional()
     .default(false),
 
   symbols: z
-    .boolean({ error: "The 'symbols' field must be true or false" })
+    .boolean({ error: "validation.symbols.type" })
     .optional()
     .default(false),
 
   uppercase: z
     .boolean({
-      error: "The 'uppercase' field must be true or false",
+      error: "validation.uppercase.type",
     })
     .optional()
     .default(false),
 
   lowercase: z
     .boolean({
-      error: "The 'lowercase' field must be true or false",
+      error: "validation.lowercase.type",
     })
     .optional()
     .default(false),

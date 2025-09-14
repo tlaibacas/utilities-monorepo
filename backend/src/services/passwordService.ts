@@ -10,7 +10,7 @@ export function generateSecurePassword(options: PasswordOptions): string {
   if (symbols) chars += "!@#$%^&*()-_=+[]{}|;:,.<>?";
   if (lowercase) chars += "abcdefghijklmnopqrstuvwxyz";
 
-  if (!chars) throw new Error("At least one character type must be enabled");
+  if (!chars) throw new Error("error.noCharacterTypeEnabled");
 
   let password = "";
   const bytes = randomBytes(length);

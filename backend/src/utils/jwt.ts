@@ -12,19 +12,15 @@ export async function setupJwt(server: FastifyInstance) {
     try {
       await request.jwtVerify();
     } catch {
-      reply
-        .status(401)
-        .send({ error: "Unauthorized: invalid or expired token" });
+      reply.status(401).send({ error: "error.unauthorized" });
     }
   });
 
   server.get("/token", async () => {
     const token = server.jwt.sign(
       { client: "front-end" },
-      { expiresIn: "10s" }
+      { expiresIn: "10h" }
     );
-    console.log("Generated token:", token);
     return { token };
   });
-  console.log("JWT setup completed");
 }

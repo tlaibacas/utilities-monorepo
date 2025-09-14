@@ -19,7 +19,7 @@ setupJwt(server);
 server.get("/", async () => {
   return {
     status: "ok",
-    message: "Server running with Fastify",
+    message: "server.running",
     timestamp: Date.now(),
   };
 });
