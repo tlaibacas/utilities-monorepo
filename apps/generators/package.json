@@ -2,12 +2,12 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build && netlify-next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
+"scripts": {
+  "dev": "next dev --turbopack",
+  "build": "next build && pnpm exec netlify-next build",
+  "start": "next start",
+  "lint": "eslint"
+},
   "dependencies": {
     "next": "15.5.4",
     "pnpm": "^10.17.1",
