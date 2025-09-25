@@ -1,9 +1,10 @@
 import Fastify from "fastify";
 import dotenv from "dotenv";
-import { registerJwt, setupJwt } from "./utils/jwt.js";
-import fastifyJwt from "@fastify/jwt";
+import fastifyRateLimit from "@fastify/rate-limit";
+
 import { registerCors } from "./utils/cors.js";
 import { registerRoutes } from "./routes/index.js";
+import { registerRateLimit } from "./utils/rateLimit.js";
 
 dotenv.config();
 
@@ -12,9 +13,8 @@ const server = Fastify({ logger: false });
 const PORT = Number(process.env.PORT);
 const HOST = process.env.HOST;
 
+registerRateLimit(server, fastifyRateLimit);
 registerCors(server);
-registerJwt(server, fastifyJwt);
-setupJwt(server);
 
 server.get("/", async () => {
   return {
