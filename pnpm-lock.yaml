@@ -16,15 +16,9 @@ importers:
 
   apps/generators:
     dependencies:
-      '@netlify/next':
-        specifier: ^1.4.9
-        version: 1.4.9(next@15.5.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
       next:
         specifier: 15.5.4
         version: 15.5.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      pnpm:
-        specifier: ^10.17.1
-        version: 10.17.1
       react:
         specifier: 19.1.0
         version: 19.1.0
@@ -35,6 +29,12 @@ importers:
       '@eslint/eslintrc':
         specifier: ^3.3.1
         version: 3.3.1
+      '@netlify/next':
+        specifier: ^1.4.9
+        version: 1.4.9(next@15.5.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))
+      '@netlify/plugin-nextjs':
+        specifier: ^5.13.3
+        version: 5.13.5
       '@tailwindcss/postcss':
         specifier: ^4.1.13
         version: 4.1.13
@@ -364,6 +364,10 @@ packages:
     engines: {node: '>=12.0.0'}
     peerDependencies:
       next: '>=12.2.0'
+
+  '@netlify/plugin-nextjs@5.13.5':
+    resolution: {integrity: sha512-zuP4sqckaeJ8rtiNYwoOpQnEb/8E4Ewf+FJDxts2s6gfgmXGuk4W5ViKZtITWWjuzxqbxG+p4t20PXltIyeJBA==}
+    engines: {node: '>=18.0.0'}
 
   '@next/env@15.5.4':
     resolution: {integrity: sha512-27SQhYp5QryzIT5uO8hq99C69eLQ7qkzkDPsk3N+GuS2XgOgoYEeOav7Pf8Tn4drECOVDsDg8oj+/DVy8qQL2A==}
@@ -1819,11 +1823,6 @@ packages:
     resolution: {integrity: sha512-+YIodBB9sxcWeR8PrXC2K3gEDyfkUuVEITOcbqrfcj+z5QW4ioIcqZfYFbrLTYLsmAwunbS7nfU/dpBB6PZc1g==}
     hasBin: true
 
-  pnpm@10.17.1:
-    resolution: {integrity: sha512-F8Vg/KSGeulHOjiZrYSogzSRTzeb5G1FXL+S5c9LOdNJhdRS0lg7rxmWf6dstcF7yeJFUp0LmHRXIapyAOyveg==}
-    engines: {node: '>=18.12'}
-    hasBin: true
-
   possible-typed-array-names@1.1.0:
     resolution: {integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg==}
     engines: {node: '>= 0.4'}
@@ -2536,6 +2535,8 @@ snapshots:
   '@netlify/next@1.4.9(next@15.5.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))':
     dependencies:
       next: 15.5.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+
+  '@netlify/plugin-nextjs@5.13.5': {}
 
   '@next/env@15.5.4': {}
 
@@ -4136,8 +4137,6 @@ snapshots:
       safe-stable-stringify: 2.5.0
       sonic-boom: 4.2.0
       thread-stream: 3.1.0
-
-  pnpm@10.17.1: {}
 
   possible-typed-array-names@1.1.0: {}
 
